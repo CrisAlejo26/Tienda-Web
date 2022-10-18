@@ -1,13 +1,25 @@
 import './App.css';
-import '/components/layaut/Header.js';
 import React from 'react';
+import Header from './components/layaut/Header';
+import { Footer } from './components/layaut/Footer';
+import { Home } from './components/Home';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <Header />
-      <center>Contenido aqui</center>
-    </div>
+      <div className="container container-fluid">
+        <Routes>
+          <Route path="/Home" element={<Home />}/>
+        </Routes>
+      </div>
+      <Home />
+      <Footer />
+      </div>
+    </Router>
   );
 }
 
